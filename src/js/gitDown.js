@@ -3,7 +3,7 @@
 
   githubApiUserUrl = "https://api.github.com/users/";
 
-  $.fn.pullDownGithubEvents = (function(_this) {
+  $.fn.gitDown = (function(_this) {
     return function(username, maxNumber) {
       var element;
       element = $(_this);

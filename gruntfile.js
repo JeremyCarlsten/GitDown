@@ -15,9 +15,6 @@ module.exports = function (grunt) {
                 ]
             }
         },
-        qunit: {
-            files: ['test/**/*.html']
-        },
         jshint: {
             files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
             options: {
@@ -50,10 +47,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-qunit');
 
-    grunt.registerTask('test', ['clean', 'coffee', 'jshint', 'qunit']);
+    grunt.registerTask('test', ['clean', 'coffee', 'jshint']);
     grunt.registerTask('compile', ['clean', 'coffee', 'jshint']);
-    grunt.registerTask('default', ['clean', 'coffee', 'jshint', 'qunit', 'uglify']);
+    grunt.registerTask('default', ['clean', 'coffee', 'jshint', 'uglify']);
 
 };

@@ -1,6 +1,6 @@
 githubApiUserUrl = "https://api.github.com/users/"
 
-$.fn.pullDownGithubEvents = (username, maxNumber) =>
+$.fn.gitDown = (username, maxNumber) =>
   element = $(this)
   $.getJSON(githubApiUserUrl + username + "/events")
   .done (data) =>
