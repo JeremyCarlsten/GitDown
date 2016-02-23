@@ -3,7 +3,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean:{
-            clean: ['distribution/', 'src/js/', 'test/src/js']
+            clean: ['distribution/']
         },
         uglify: {
             options: {
@@ -26,18 +26,10 @@ module.exports = function (grunt) {
                 }
             }
         },
-        coffee: {
-            compile: {
-                files: {
-                    'src/js/gitDown.js': 'src/coffee/*.coffee',
-                    'test/src/js/mainTest.js': 'test/src/coffee/*.coffee'
-                }
-            }
-        },
         watch:{
             scripts:{
-                files: ['src/**/*.coffee', 'test/**/*.coffee'],
-                tasks: ['clean', 'coffee']
+                files: ['src/**/*.js', 'test/**/*.js'],
+                tasks: ['default']
             }
         }
     });
@@ -45,11 +37,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('test', ['clean', 'coffee', 'jshint']);
-    grunt.registerTask('compile', ['clean', 'coffee', 'jshint']);
-    grunt.registerTask('default', ['clean', 'coffee', 'jshint', 'uglify']);
+    grunt.registerTask('default', ['clean', 'jshint', 'uglify']);
 
 };
