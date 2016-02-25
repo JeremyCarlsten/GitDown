@@ -20,10 +20,3 @@ For example the code below...
 ```
 would pull down ten of some handsome guy's github event list.
 
-
-Todo:
-  - [ ] get rid of that pesky Qunit i used to like.
-  - [ ] write more tests... wishing I had followed TDD..
-  - [ ] discover what's missing by looking at aforementioned tests.
-  - [ ] convert to jasmine
-  - [ ] get rid of jquery dependency to make it super lightweight? 
