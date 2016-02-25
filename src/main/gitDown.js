@@ -14,6 +14,7 @@ $.fn.gitDown = function(username, maxNumber) {
     var element;
     element = $(this);
     $.getJSON(githubApiUserUrl + username + "/events").done(function(data) {
+        console.log(data[0]);
       return buildHtml(data, maxNumber, element);
     }).fail(function(jqxhr, textStatus, error) {
       return console.log("you've messed it all up." + error);

@@ -25,32 +25,13 @@ module.exports = function (grunt) {
                     document: true
                 }
             }
-        },
-        jasmine: {
-          src: 'src/main/**/*.js',
-            options: {
-              specs: 'src/test/*Test.js',
-              vendor: [
-                "node_modules/jquery/dist/jquery.min.js",
-                "node_modules/jasmine-ajax/lib/mock-ajax.js"
-              ]
-            }
-        },
-        watch:{
-            scripts:{
-                files: ['src/**/*.js', 'test/**/*.js'],
-                tasks: ['default']
-            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('test', ['clean', 'jshint', 'jasmine'])
-    grunt.registerTask('default', ['test', 'uglify']);
+    grunt.registerTask('default', ['clean', 'jshint', 'uglify']);
 
 };
